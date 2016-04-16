@@ -23,6 +23,7 @@ int main(void) {
     } else if ( a == b ) {  //  aとbが等しかった場合
       
     }
+    k++;
     break;
   }
   return 0;
