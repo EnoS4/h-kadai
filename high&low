@@ -8,9 +8,7 @@ int main(void) {
   j = 0;
   srand(time(NULL));
   
-  while( j == 1 && k < 3 ){
-    
-  //printfでhigh&lowのゲームであること。最初の数字と比べてこの後の数字が高いか低いかを入力してもらうこと説明する。
+  do {
   
   int a = rand() % 10;  // ここで乱数1を発生し、aにおく
   printf(" a = %d\n", a);
@@ -26,14 +24,16 @@ int main(void) {
       printf("不正解);
       printf("このまま続ける場合は1を、ゲームをやめる場合は0を入力してください。\n");
       scanf("%d", &j);
-      
+      if ( j > 1 ) {  //jに0,1以外の数字が出力された場合
+      break;
+      }
     } else if ( a == b ) {  //  aとbが等しかった場合
     printf("正解);
-    } else {
+    } else {  //それ以外の場合
       break;
     }
     k++;
     
-  }
+  } while( j == 1 && k < 3 ); //jで続けた場合と無限ループ避ける為3回まではゲームを行う
   return 0;
 }
