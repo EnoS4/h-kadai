@@ -2,23 +2,24 @@
 #include<string.h>
 
 int main(void) {
-  //int i,j;
+  int i,j;
   srand(time(NULL));
   int a = rand() % 10;  // ここで乱数1を発生し、aにおく
   printf("%d\n", a);
   
   //a < b = 0;
   //a > b =1;
+  //printfでhigh&lowのゲームであること。最初の数字と比べてこの後の数字が高いか低いかを入力してもらうこと説明する。
   printf("高ければ1を。低ければ0を入力してください。\n");
-    scanf("%d", j);
+    scanf("%d", i);
     
     int b = rand() % 10;  //乱数2を発生し、bにおく
-    //printf("%d\n", b);
-    if (( a < b && j == 0 ) || ( a > b && j == 1 )) {
+    if (( a < b && i == 0 ) || ( a > b && i == 1 )) { // 正解の場合
       
-    } else if (( a < b && j == 1 ) || ( a > b && j == 0)) {
-      
-    } else if () {
+    } else if (( a < b && i == 1 ) || ( a > b && i == 0 )) { //  不正解の場合
+      printf("このまま続ける場合は1を、ゲームをやめる場合は0を入力してください。\n");
+      scanf("%d", j);
+    } else if ( a == b ) {  //  aとbが等しかった場合
       
     }
   return 0;
