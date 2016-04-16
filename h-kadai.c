@@ -18,6 +18,8 @@ int main(void) {
       
     } else if (( a < b && j == 1 ) || ( a > b && j == 0)) {
       
+    } else if () {
+      
     }
   return 0;
 }
