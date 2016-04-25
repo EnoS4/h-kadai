@@ -3,13 +3,14 @@
 #include<string.h>
 #include<time.h>
 
-#define max 4
-#define count 1
+#define moji 4
+#define suuji 10
 
 /*ランダムで数字1と2、算術演算子が出力
 ユーザーが出力された値の計算結果を入力し、
 実際の計算結果とあっているか判定*/
-int number(int imp, int num1, int num2);
+
+int number();
 int enzan();
 int kekka(int input, int num1, int num2);
 
@@ -23,7 +24,7 @@ int main(void) {
 	
 	printf("数当てだよ！\n");
 	
-	while(){
+	while(1){
 	
 		printf("%d %s %d =\n", num1, enzan(), num2);
 	  
@@ -35,25 +36,26 @@ int main(void) {
 	      printf("= %d\n正解！\n",result);
 	    } else if (input != result) { //  不正解の場合
 	      printf("= %d\n不正解！\n",result);
+	      break;
 	    }
 	}
 	return 0;
 }
 
-int number(int imp, int num1, int num2) //数字をランダムで発生
+int number() //数字をランダムで発生
 {
   srand((unsigned)time(NULL));
-  return rand() % 10;
+  return rand() % suuji;
 }
 
 int enzan()  //+,=,*,/をランダムで発生
 {
  	char *enzanshi[] = {"+","-","*","/"};
   	srand((unsigned)time(NULL));
-  	return enzanshi[rand() % max];
+  	return enzanshi[rand() % moji];
 }
 
-int kekka(int input, int num1, int num2)  //ランダムで発生させた値の計算結果
+int kekka(int num1, int num2)  //ランダムで発生させた値の計算結果
 {
 	int goukei = 0;
 	if ( enzan() == "+") {
