@@ -12,13 +12,13 @@
 
 int number();
 int enzan();
-int kekka(int input, int num1, int num2);
+int kekka(int num1, int num2);
 
 int main(void) {
-	int input, cnt;
-  	int num1 = number(int imp, int num1, int num2);
-  	int num2 = number(int imp, int num1, int num2);
-  	int result = kekka(input, num1, num2);
+	int input;
+  	int num1 = number();
+  	int num2 = number();
+  	int result = kekka(num1, num2);
   	
   	srand((unsigned)time(NULL));
 	
