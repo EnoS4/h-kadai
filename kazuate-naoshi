@@ -69,3 +69,4 @@ int kekka(int num1, int num2)  //ランダムで発生させた値の計算結�
   	}
   	return goukei;
 }
+
