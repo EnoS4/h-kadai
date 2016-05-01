@@ -16,13 +16,13 @@ int kekka(int num1, int num2);
 
 int main(void) {
 	 int input;
-	 int num1 = number();
-	 int num2 = number();
-	 int result = kekka(num1, num2);
 	 
 	 printf("数当てだよ！\n");
 	
 	while(1){
+		int num1 = number();
+		int num2 = number();
+		int result = kekka(num1, num2);
 	
 		printf("%d %s %d =\n", num1, enzan(), num2);
 	  
