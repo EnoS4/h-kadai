@@ -30,9 +30,10 @@ int main(void) {
 	  	scanf("%d", &input);
 	  	printf("%d\n", input);
 	
-	    if (input == result) { // 正解の場合
+	//入力した値と計算結果の比較、判定
+	    if (input == result) {
 	      printf("= %d\n正解！\n",result);
-	    } else if (input != result) { //  不正解の場合
+	    } else if (input != result) {
 	      printf("= %d\n不正解！\n",result);
 	      break;
 	    }
