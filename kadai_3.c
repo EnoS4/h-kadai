@@ -12,7 +12,7 @@
 
 int number();
 int enzan();
-int kekka(int num1, int num2);
+int kekka(int num1, int num2, char arithmetic);
 
 int main(void) {
 	 int input;
@@ -22,9 +22,10 @@ int main(void) {
 	while(1){
 		int num1 = number();
 		int num2 = number();
-		int result = kekka(num1, num2);
+		char arithmetic = enzan();
+		int result = kekka(num1, num2, arithmetic);
 	
-		printf("%d %s %d =\n", num1, enzan(), num2);
+		printf("%d %s %d =\n", num1, arithmetic, num2);
 	  
 	  	printf("計算結果を入力してください\n");
 	  	scanf("%d", &input);
@@ -51,22 +52,21 @@ int enzan()  //+,=,*,/をランダムで発生
 {
  	char *enzanshi[] = {"+","-","*","/"};
   	srand((unsigned)time(NULL));
-  	return enzanshi[rand() % word];
+  	return *enzanshi[rand() % word];
 }
 
-int kekka(int num1, int num2)  //ランダムで発生させた値の計算結果
+int kekka(int num1, int num2, char arithmetic)  //ランダムで発生させた値の計算結果
 {
 	int goukei = 0;
-	if ( enzan() == "+") {
+	if ( arithmetic == "+") {
   		goukei = num1 + num2;
-  	} else if (enzan() == "-") {
+  	} else if (arithmetic == "-") {
 		goukei = num1 - num2;
-  	} else if (enzan() == "*") {
+  	} else if (arithmetic == "*") {
     	goukei = num1 * num2;
-  	} else if (enzan() == "/"){
+  	} else if (arithmetic == "/"){
   	    if (num2 == 0) {
     		/*エラー処理*/
-    		
     		return 0;
     	}
     	goukei = num1 / num2;
