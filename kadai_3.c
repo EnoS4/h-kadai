@@ -66,7 +66,7 @@ int kekka(int num1, int num2)  //ランダムで発生させた値の計算結�
   	} else if (enzan() == "/"){
   	    if (num2 == 0) {
     		/*エラー処理*/
-    		
+    		break;
     		return 0;
     	}
     	goukei = num1 / num2;
