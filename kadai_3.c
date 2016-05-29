@@ -22,8 +22,14 @@ int main(void) {
 	while (1) {
 		int num1 = number();
 		int num2 = number();
+		if (num2 == 0) {
+		continue;
+		}
 		char arithmetic = enzan();
 		int result = kekka(num1, num2, arithmetic);
+		if (result == INT_MAX) {
+			continue;
+		}
 
 		printf("%d %c %d =\n", num1, arithmetic, num2);
 
@@ -70,7 +76,6 @@ int kekka(int num1, int num2, char arithmetic)  //ランダムで発生させた
 	else if (arithmetic == '/') {
 		if (num2 == 0) {
 			/*エラー処理*/
-			number();
 			return 0;
 		}
 		goukei = num1 / num2;
